@@ -1,0 +1,37 @@
+<style>
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+        background: white;
+        transition: transform 0.2s;
+    }
+    .card:hover { transform: scale(1.02); }
+    .badge { background: #eee; padding: 4px 8px; border-radius: 4px; font-size: 0.8em; }
+</style>
+
+<h2>My Collections</h2>
+<a href="{% url 'add_collection' %}" style="margin-left: 20px;">+ Create New Collection</a>
+
+<div class="card-container">
+    {% for col in collections %}
+    <div class="card">
+        <h3>{{ col.name }}</h3>
+        <p>Type: {% if col.wishlist %}<span class="badge">Wishlist</span>{% else %}<span class="badge">Archive</span>{% endif %}</p>
+        
+        <form action="{% url 'delete_collection' col.pk %}" method="post">
+            {% csrf_token %}
+            <button type="submit" style="color: red; border: none; background: none; cursor: pointer;">Delete</button>
+        </form>
+    </div>
+    {% empty %}
+    <p>You haven't created any collections yet.</p>
+    {% endfor %}
+</div>
