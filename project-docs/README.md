@@ -13,5 +13,7 @@ A book library with users accounts and book collection using MySQL(users) and un
     -unknown
 
 ## Status (constantly updated)
-Planning and getting required infos
+- Week 1 phase
+- Planning and getting required infos
+
 

@@ -1,14 +1,12 @@
 # To do list:
 
-## ASAP
-- gather all needed info
-- start writing code 
+## Schedule
 
+### Week 1 (Feb 18 to 25)
+- Install Django
+- Install Databases
+- config database (make sure it works type shi)
+- Get "Hello World" working using django
 
-## At sum point
-
-
-## Done 
-- downloaded mongoDB, MySQL
-- created branches in git
-- environment ready
+### Week 2 
+- still unknown
